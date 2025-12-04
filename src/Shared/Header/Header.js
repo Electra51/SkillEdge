@@ -42,7 +42,7 @@ const Header = () => {
             <img
               src={logoWhite}
               alt="SkillEdge Logo"
-              className=" w-32 transition-transform group-hover:scale-110"
+              className="w-32 transition-transform group-hover:scale-110"
             />
           </Link>
 
