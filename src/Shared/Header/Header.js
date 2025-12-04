@@ -18,9 +18,30 @@ const Header = () => {
   };
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+
+    if (newDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
   };
+
+  // Load saved theme on mount
+  React.useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -38,13 +59,24 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo Section */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <img
-              src={logoWhite}
-              alt="SkillEdge Logo"
-              className="w-32 transition-transform group-hover:scale-110"
-            />
-          </Link>
+
+          {darkMode ? (
+            <Link to="/" className="flex items-center space-x-2 group">
+              <img
+                src={logoWhite}
+                alt="SE Learning Logo"
+                className="w-32 transition-transform "
+              />
+            </Link>
+          ) : (
+            <Link to="/" className="flex items-center space-x-2 group">
+              <img
+                src={logo}
+                alt="SE Learning Logo"
+                className="w-32 transition-transform"
+              />
+            </Link>
+          )}
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-1">

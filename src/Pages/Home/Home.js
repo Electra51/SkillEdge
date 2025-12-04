@@ -43,6 +43,8 @@ import {
 } from "react-icons/fa";
 import { MdOndemandVideo, MdSchool } from "react-icons/md";
 import { HiAcademicCap } from "react-icons/hi";
+import { HowItWorks } from "../HowItWorks/HowItWorks";
+import FAQ from "../HowItWorks/FAQ";
 
 const Home = () => {
   const [stats, setStats] = useState({
@@ -424,6 +426,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <HowItWorks />
+      <FAQ />
     </div>
   );
 };
