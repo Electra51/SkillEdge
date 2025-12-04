@@ -55,7 +55,7 @@ const Header = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md transition-colors duration-300">
+    <nav className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md py-2 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo Section */}
@@ -147,8 +147,7 @@ const Header = () => {
                 </Link>
                 <Link
                   to="/signup"
-                  className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg 
-                           font-medium transition-all duration-200 shadow-sm hover:shadow-md">
+                  className="px-5 py-2 bg-gradient-to-br from-[#3E3E5E] via-[#0F0E17] to-indigo-800 hover:bg-blue-700 text-white rounded-lg border border-white font-medium transition-all duration-200 shadow-sm hover:shadow-md">
                   Sign Up
                 </Link>
               </div>
