@@ -11,7 +11,7 @@ import {
   FaMapMarkerAlt,
   FaArrowRight,
 } from "react-icons/fa";
-import logo from "../../Assets/logo-white.svg";
+import logo from "../Assets/logo-white.svg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

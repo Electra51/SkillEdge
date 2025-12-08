@@ -34,7 +34,7 @@ const CourseCard = ({ course }) => {
 
         <Link
           to={`/category/${course.category_id}`}
-          className="block w-full py-3 bg-gray-900 dark:bg-gray-700 text-white text-center rounded-lg font-semibold transition-colors duration-300 hover:bg-blue-600">
+          className="block w-full py-3 bg-gray-900 dark:bg-gray-700 hover:bg-yellow-600 dark:hover:bg-yellow-600 text-white rounded-lg font-semibold transition-all duration-300 group-hover:shadow-md">
           View Details
         </Link>
       </div>

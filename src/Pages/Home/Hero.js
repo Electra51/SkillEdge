@@ -42,7 +42,6 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-[#3E3E5E] via-[#0F0E17] to-indigo-800 overflow-hidden">
-      {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-300 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -69,21 +68,17 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               to="/courses"
-              className="group px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 flex items-center gap-2">
+              className="group px-8 py-4 bg-yellow-400 rounded-lg font-semibold text-lg hover:bg-white text-black hover:text-gray-900 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 flex items-center gap-2">
               Explore Courses
               <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Link>
 
-            <button
-              className="group px-8 py-4 bg-transparent border-2 border-white text-white 
-                               rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 
-                               transition-all duration-300 flex items-center gap-2">
+            <button className="group px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300 flex items-center gap-2">
               <FaPlay className="group-hover:scale-110 transition-transform" />
               Watch Demo
             </button>
           </div>
 
-          {/* Stats */}
           <div className="mt-16 grid grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">
@@ -107,7 +102,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Wave Divider */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"

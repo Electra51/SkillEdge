@@ -2,10 +2,10 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FaUser, FaBars, FaTimes } from "react-icons/fa";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
-import logo from "../../Assets/logo.svg";
-import logoWhite from "../../Assets/logo-white.svg";
-import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
-import { useDarkMode } from "../../Contexts/AuthProvider/DarkModeContext";
+import logo from "../Assets/logo.svg";
+import logoWhite from "../Assets/logo-white.svg";
+import { AuthContext } from "../Contexts/AuthProvider/AuthProvider";
+import { useDarkMode } from "../Contexts/AuthProvider/DarkModeContext";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
