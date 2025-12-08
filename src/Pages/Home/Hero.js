@@ -1,7 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaPlay, FaArrowRight } from "react-icons/fa";
-const Hero = ({ stats }) => {
+const Hero = () => {
+  const [stats, setStats] = useState({
+    students: 0,
+    courses: 0,
+    instructors: 0,
+  });
+
+  useEffect(() => {
+    const duration = 2000;
+    const steps = 60;
+    const increment = {
+      students: 50000 / steps,
+      courses: 500 / steps,
+      instructors: 200 / steps,
+    };
+
+    let currentStep = 0;
+    const timer = setInterval(() => {
+      if (currentStep < steps) {
+        setStats((prev) => ({
+          students: Math.min(
+            Math.floor(prev.students + increment.students),
+            50000
+          ),
+          courses: Math.min(Math.floor(prev.courses + increment.courses), 500),
+          instructors: Math.min(
+            Math.floor(prev.instructors + increment.instructors),
+            200
+          ),
+        }));
+        currentStep++;
+      } else {
+        clearInterval(timer);
+      }
+    }, duration / steps);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-[#3E3E5E] via-[#0F0E17] to-indigo-800 overflow-hidden">
       {/* Animated Background Elements */}
@@ -31,9 +69,7 @@ const Hero = ({ stats }) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               to="/courses"
-              className="group px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg
-                         hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 
-                         shadow-xl hover:shadow-2xl hover:scale-105 flex items-center gap-2">
+              className="group px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 flex items-center gap-2">
               Explore Courses
               <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Link>

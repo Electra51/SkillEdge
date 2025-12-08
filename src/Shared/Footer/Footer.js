@@ -68,39 +68,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-gray-300">
-      <div className="bg-gradient-to-r from-gray-600 to-gray-700 py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                Subscribe to Our Newsletter
-              </h3>
-              <p className="text-blue-100">
-                Get the latest courses and updates delivered to your inbox
-              </p>
-            </div>
-            <div className="w-full md:w-auto">
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-6 py-3 rounded-lg bg-white text-gray-900 placeholder-gray-500
-                           focus:outline-none focus:ring-4 focus:ring-blue-300"
-                />
-                <button
-                  className="px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-900 
-                                 font-semibold rounded-lg transition-colors duration-300 
-                                 flex items-center justify-center gap-2 whitespace-nowrap">
-                  Subscribe
-                  <FaArrowRight />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2 group">
@@ -118,17 +86,19 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <FaMapMarkerAlt className="text-blue-500 mt-1 flex-shrink-0" />
-                <span className="text-sm">
-                  123 Learning Street, Education City, BD 1234
+                <span className="text-sm text-start">
+                  1/3 Learn Street, Edu City, B-1034
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaPhone className="text-blue-500 flex-shrink-0" />
-                <span className="text-sm">+880 1234-567890</span>
+                <span className="text-sm text-start">+880 1234-567890</span>
               </div>
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-blue-500 flex-shrink-0" />
-                <span className="text-sm">info@skiledgelearning.com</span>
+                <span className="text-sm text-start">
+                  info@skiledgelearning.com
+                </span>
               </div>
             </div>
           </div>
@@ -236,7 +206,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm text-center md:text-left">
               © {currentYear} SkillEdge Learning. All rights reserved. Made with

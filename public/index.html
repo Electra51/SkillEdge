@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" class="light"/>
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta charset="utf-8" class="light" />
+    <link rel="icon" href="%PUBLIC_URL%/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
-    />
+      content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -27,7 +26,6 @@
     <title>SE LEARNING</title>
   </head>
   <body>
-    
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -41,15 +39,17 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script>
-      const checkbox=document.querySelector("#toggle");
-      const html=document.querySelector("html");
+      const checkbox = document.querySelector("#toggle");
+      const html = document.querySelector("html");
 
-      const toggleDarkMode = function(){
-        checkbox.checked ? html.classList.add("dark") : html.classList.remove("dark")
-      }
+      const toggleDarkMode = function () {
+        checkbox.checked
+          ? html.classList.add("dark")
+          : html.classList.remove("dark");
+      };
 
       toggleDarkMode();
-      checkbox.addEventListener("click", toggleDarkMode)
+      checkbox.addEventListener("click", toggleDarkMode);
     </script>
   </body>
 </html>

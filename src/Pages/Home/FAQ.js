@@ -33,7 +33,7 @@ export const FAQ = () => {
                 <button
                   onClick={() => toggleFAQ(index)}
                   className="w-full px-6 py-5 flex items-center justify-between 
-                           text-left hover:bg-gray-50 dark:hover:bg-gray-850 
+                           text-left dark:hover:bg-gray-850 
                            transition-colors duration-200">
                   <span className="text-lg font-semibold text-gray-900 dark:text-white pr-8">
                     {faq.question}
@@ -70,7 +70,7 @@ export const FAQ = () => {
 
         <div className="mt-16 text-center">
           <div
-            className="inline-block bg-white w-full dark:bg-gray-900 rounded-2xl p-8 shadow-lg 
+            className="inline-block bg-white w-full dark:bg-gray-700 rounded-2xl p-8 shadow-lg 
                         border border-gray-200 dark:border-gray-700">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
               Still Have Questions?
@@ -80,9 +80,7 @@ export const FAQ = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-[#3E3E5E] via-[#0F0E17] to-indigo-800 hover:bg-blue-700 
-                       text-white rounded-lg font-semibold transition-all duration-300 
-                       hover:scale-105 shadow-md hover:shadow-lg">
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-700 dark:bg-gray-900 text-white rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg">
               Contact Support
               <FaArrowRight />
             </Link>

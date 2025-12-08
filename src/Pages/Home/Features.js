@@ -19,7 +19,7 @@ const Features = () => {
             <div
               key={index}
               className="group p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-850 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#3E3E5E] via-[#0F0E17] to-indigo-800 text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gray-700 dark:bg-gray-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 text-white">
                 {feature.icon}
               </div>
               <h3 className="text-xl text-start font-bold text-gray-900 dark:text-white mb-3">
