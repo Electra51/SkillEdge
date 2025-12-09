@@ -11,7 +11,7 @@ import Subscribe from "./Subscribe";
 
 const Home = () => {
   return (
-    <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="bg-white dark:bg-gray-800 transition-colors duration-300">
       <Hero />
       <Features />
       <PopularCourses />

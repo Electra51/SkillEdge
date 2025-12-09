@@ -2,9 +2,11 @@ import React from "react";
 import { FaClock, FaStar, FaUsers } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const CourseCard = ({ course }) => {
+const CourseCard = ({ course, onclick }) => {
   return (
-    <div className="group bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+    <div
+      className="group bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+      onClick={() => onclick(course)}>
       <div className="relative overflow-hidden h-48">
         <img
           src={course.img}
@@ -33,7 +35,7 @@ const CourseCard = ({ course }) => {
         </div>
 
         <Link
-          to={`/category/${course.category_id}`}
+          to={`/course/${course._id}`}
           className="block w-full py-3 bg-gray-900 dark:bg-gray-700 hover:bg-yellow-600 dark:hover:bg-yellow-600 text-white rounded-lg font-semibold transition-all duration-300 group-hover:shadow-md">
           View Details
         </Link>

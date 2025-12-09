@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Description from "./Description";
-import AllCourses from "./AllCourses";
+import CourseCard from "../../Shared/CourseCard/CourseCard";
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
@@ -18,7 +18,7 @@ const Courses = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
+    <div className="min-h-screen bg-white dark:bg-gray-800 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-start mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -32,13 +32,15 @@ const Courses = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <div className="grid sm:grid-cols-2 gap-6">
-              {courses.map((course) => (
-                <AllCourses
-                  key={course.id}
-                  course={course}
-                  handleClick={handleClick}
-                />
-              ))}
+              {courses.map((course) => {
+                return (
+                  <CourseCard
+                    course={course}
+                    key={course.category_id}
+                    onclick={handleClick}
+                  />
+                );
+              })}
             </div>
           </div>
 

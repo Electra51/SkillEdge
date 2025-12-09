@@ -21,9 +21,75 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const NewData = () => {
+const CourseDetail = () => {
   const course = useLoaderData();
   const [activeTab, setActiveTab] = useState("overview");
+
+  // Download Syllabus Function
+  const handleDownloadSyllabus = () => {
+    const syllabusContent = `
+COURSE SYLLABUS
+================
+
+Course Name: ${course?.name || "N/A"}
+Level: ${course?.level || "N/A"}
+Duration: ${course?.duration || "N/A"}
+Instructor: ${course?.author || "N/A"}
+Language: ${course?.language || "N/A"}
+Category: ${course?.category_name || "N/A"}
+
+DESCRIPTION:
+${course?.detail || "No description available"}
+
+LEARNING OUTCOMES:
+${
+  course?.learning_outcomes
+    ?.map((outcome, i) => `${i + 1}. ${outcome}`)
+    .join("\n") || "No learning outcomes listed"
+}
+
+CURRICULUM:
+${
+  course?.curriculum
+    ?.map(
+      (section) => `
+Module ${section.module}: ${section.title}
+- Lectures: ${section.lectures}
+- Duration: ${section.duration}
+`
+    )
+    .join("\n") || "No curriculum information available"
+}
+
+PREREQUISITES:
+${
+  course?.prerequisites?.map((prereq, i) => `${i + 1}. ${prereq}`).join("\n") ||
+  "No prerequisites required"
+}
+
+TOOLS COVERED:
+${course?.tools_covered?.join(", ") || "N/A"}
+
+COURSE INCLUDES:
+- ${course?.video || "N/A"} video lectures
+- ${course?.duration || "N/A"} on-demand content
+- ${course?.question || "N/A"} practice quizzes
+- Certificate of completion
+- Downloadable resources
+
+For more information, visit our website.
+    `.trim();
+
+    const blob = new Blob([syllabusContent], { type: "text/plain" });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${course?.name?.replace(/[^a-z0-9]/gi, "_")}_Syllabus.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+  };
 
   if (!course) {
     return (
@@ -102,9 +168,8 @@ const NewData = () => {
               </div>
 
               <div className="p-6">
-                {/* Price Section */}
                 {course?.discount_price && (
-                  <div className="mb-6">
+                  <div className="mb-6 flex justify-between items-start">
                     <div className="flex items-center gap-3 mb-2">
                       <span className="text-3xl font-bold text-gray-900">
                         ${course?.discount_price}
@@ -128,39 +193,34 @@ const NewData = () => {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-start gap-3">
                     <FaVideo className="text-blue-600 mt-1 flex-shrink-0" />
-                    <div>
-                      <div className="font-semibold text-gray-900">
-                        {course?.video}
-                      </div>
-                      <div className="text-sm text-gray-500">Lectures</div>
+
+                    <div className="font-semibold text-gray-900">
+                      {course?.video}
                     </div>
+                    <div className="text-sm text-gray-500">Lectures</div>
                   </div>
                   <div className="flex items-start gap-3">
                     <FaClock className="text-blue-600 mt-1 flex-shrink-0" />
-                    <div>
-                      <div className="font-semibold text-gray-900">
-                        {course?.duration}
-                      </div>
-                      <div className="text-sm text-gray-500">Duration</div>
+
+                    <div className="font-semibold text-gray-900">
+                      {course?.duration}
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <FaQuestionCircle className="text-blue-600 mt-1 flex-shrink-0" />
-                    <div>
-                      <div className="font-semibold text-gray-900">
-                        {course?.question}
-                      </div>
-                      <div className="text-sm text-gray-500">Quizzes</div>
+
+                    <div className="font-semibold text-gray-900">
+                      {course?.question}
                     </div>
+                    <div className="text-sm text-gray-500">Quizzes</div>
                   </div>
                   <div className="flex items-start gap-3">
                     <FaCertificate className="text-blue-600 mt-1 flex-shrink-0" />
-                    <div>
-                      <div className="font-semibold text-gray-900">
-                        {course?.certificate}
-                      </div>
-                      <div className="text-sm text-gray-500">Certificate</div>
+
+                    <div className="font-semibold text-gray-900">
+                      {course?.certificate}
                     </div>
+                    <div className="text-sm text-gray-500">Certificate</div>
                   </div>
                 </div>
 
@@ -168,10 +228,20 @@ const NewData = () => {
                   Enroll Now - ${course?.discount_price || course?.price}
                 </button>
 
-                <button className="w-full border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-semibold py-3 rounded-lg transition flex items-center justify-center gap-2">
+                <button
+                  onClick={handleDownloadSyllabus}
+                  className="w-full border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-semibold py-3 rounded-lg transition flex items-center justify-center gap-2 mb-3">
                   <FaDownload />
                   Download Syllabus
                 </button>
+
+                {/* NEW: Get Premium Access Button */}
+                <Link
+                  to={`/category/${course?.category_id}/checkout`}
+                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 rounded-lg transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                  <FaStar />
+                  Get Premium Access
+                </Link>
               </div>
             </div>
           </div>
@@ -434,4 +504,4 @@ const NewData = () => {
   );
 };
 
-export default NewData;
+export default CourseDetail;
