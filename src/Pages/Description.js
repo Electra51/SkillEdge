@@ -10,7 +10,6 @@ import {
   FaCertificate,
   FaVideo,
 } from "react-icons/fa";
-import CourseDetails from "./CourseDetails/CourseDetails";
 
 const Description = ({ description }) => {
   let name,
@@ -23,6 +22,7 @@ const Description = ({ description }) => {
     language,
     question,
     certificate;
+  console.log("description", description);
 
   if (description.length > 0) {
     const course = description[0];
@@ -37,6 +37,7 @@ const Description = ({ description }) => {
     question = course.question;
     certificate = course.certificate;
   }
+  console.log("id", id);
 
   if (description.length === 0) {
     return (
@@ -56,11 +57,8 @@ const Description = ({ description }) => {
 
   return (
     <div className="">
-      {/* {description.map((desc) => (
-        <CourseDetails key={desc.id} description={desc} />
-      ))} */}
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700">
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-3">
+        <div className="bg-gradient-to-br from-[#3E3E5E] via-[#0F0E17] to-indigo-800 p-3">
           <h5 className="text-2xl font-bold text-white mb-2 text-start">
             {name}
           </h5>
@@ -77,7 +75,7 @@ const Description = ({ description }) => {
         </div>
 
         <div className="px-4 py-3 space-y-6">
-          <div className="flex items-center gap-4 p-3 bg-gray-50 dark:bg-gray-850 rounded-lg">
+          <div className="flex items-center gap-4 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
             <img
               src={author_img}
               alt={author}
@@ -170,8 +168,8 @@ const Description = ({ description }) => {
           )}
 
           <Link
-            to={`/category/${id}`}
-            className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-center rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group">
+            to={`/course/${description[0]._id}`}
+            className="w-full py-4 bg-gradient-to-r from-blue-600 to-gray-600 hover:from-blue-700 hover:to-indigo-700 text-white text-center rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group">
             View Full Details
             <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
           </Link>

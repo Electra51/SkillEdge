@@ -1,37 +1,22 @@
-import React from 'react';
+import React from "react";
 
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData } from "react-router-dom";
 
-import './Category.css'
+import "./Category.css";
 
-import NewData from './NewData/NewData';
-
+import NewData from "./NewData/NewData";
 
 const Category = () => {
-    const datas = useLoaderData();
-    
-    return (
-        <div>
+  const datas = useLoaderData();
+  console.log("datas", datas);
 
-            {
-                <NewData
-                    data={datas}
-                    
-                    
-                ></NewData>
-              
-                
-                
-                 
-            }
-            
-            <div>
-                
-            </div>
-        </div>
-        
-        
-    );
+  return (
+    <div>
+      {<NewData data={datas}></NewData>}
+
+      <div></div>
+    </div>
+  );
 };
 
 export default Category;

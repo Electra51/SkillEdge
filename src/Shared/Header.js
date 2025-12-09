@@ -13,6 +13,7 @@ const Header = () => {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const navigate = useNavigate();
   const location = useLocation();
+  console.log("user", user);
 
   const handleLogOut = () => {
     logOut()

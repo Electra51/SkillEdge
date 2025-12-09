@@ -22,7 +22,7 @@ const AllCourses = (props) => {
       </div>
 
       <div className="p-5">
-        <h5 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200 line-clamp-2">
+        <h5 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors duration-200 line-clamp-2">
           {name}
         </h5>
 
@@ -37,7 +37,7 @@ const AllCourses = (props) => {
           </div>
         </div>
 
-        <button className="w-full py-3 bg-gray-900 dark:bg-gray-700 hover:bg-blue-600 dark:hover:bg-blue-600 text-white rounded-xl font-semibold transition-all duration-300 group-hover:shadow-lg">
+        <button className="w-full py-3 bg-gray-900 dark:bg-gray-700 hover:bg-yellow-600 dark:hover:bg-yellow-600 text-white rounded-xl font-semibold transition-all duration-300 group-hover:shadow-lg">
           View Details
         </button>
       </div>

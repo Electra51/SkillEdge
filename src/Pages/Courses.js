@@ -7,7 +7,6 @@ const Courses = () => {
   const [description, setDescription] = useState([]);
 
   useEffect(() => {
-    // fetch("https://learning-server-side-sooty.vercel.app/categories")
     fetch("http://localhost:5001/categories")
       .then((res) => res.json())
       .then((data) => setCourses(data));

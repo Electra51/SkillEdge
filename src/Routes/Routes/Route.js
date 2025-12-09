@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layouts/Main";
 
 import Home from "../../Pages/Home/Home";
-import FAQ from "../../Pages/FAQ/FAQ";
 import ErrorPage from "../../Shared/ErrorPage";
 import Blogs from "../../Pages/Blogs/Blogs";
 import Courses from "../../Pages/Courses";
@@ -16,6 +15,7 @@ import Signup from "../../Shared/Signup";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import TermsAndConditions from "../../Pages/TermsAndConditions/TermsAndConditions";
 import Profile from "../../Pages/Profile/Profile";
+import NewData from "../../Pages/Category/NewData/NewData";
 
 export const routes = createBrowserRouter([
   {
@@ -51,18 +51,20 @@ export const routes = createBrowserRouter([
 
       {
         path: "/category/:id",
-        element: <Category></Category>,
+        element: <Category />,
         loader: async ({ params }) => {
-          return fetch(
-            `https://learning-server-side-sooty.vercel.app/category/${params.id}`
-          );
+          return fetch(`http://localhost:5001/course/${params.id}`);
         },
       },
 
       {
-        path: "/FAQ",
-        element: <FAQ></FAQ>,
+        path: "/course/:id", // new route add korun
+        element: <NewData />,
+        loader: async ({ params }) => {
+          return fetch(`http://localhost:5001/course/${params.id}`);
+        },
       },
+
       {
         path: "/Blogs",
         element: <Blogs></Blogs>,

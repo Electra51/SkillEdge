@@ -1,115 +1,8 @@
-// import React from "react";
-// import {
-//   FaDownload,
-//   FaCertificate,
-//   FaLanguage,
-//   FaLevelDownAlt,
-//   FaQuestion,
-//   FaStopwatch,
-//   FaVideo,
-// } from "react-icons/fa";
-// import { Link, useLoaderData } from "react-router-dom";
-// import AllData from "../../AllData/AllData";
-// import CheckOut from "../../CheckOut/CheckOut";
-
-// const NewData = () => {
-//   // console.log(data);
-//   const data = useLoaderData();
-//   console.log("mmmmkkkks", data);
-//   const { author } = data;
-
-//   let id;
-//   for (const news of data) {
-//     id = news.id;
-//   }
-
-//   const handleButton = (data) => {
-//     console.log(data);
-//   };
-
-//   return (
-//     <div>
-//       {<AllData data={data} handleButton={handleButton}></AllData>}
-
-//       <div className="detail-course px-10">
-//         <div className="subject mt-8">
-//           {/* <img src={data[0].img} alt="" className='w-full p-9'/> */}
-
-//           <div className="rounded overflow-hidden shadow-lg border px-5">
-//             <div className="px-6 pt-4 pb-2 flex justify-between">
-//               <div className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white mb-5">
-//                 {data[0].name}
-//               </div>
-//               <div>
-//                 <FaDownload />
-//               </div>
-//             </div>
-//             <img
-//               className="w-full border rounded-md"
-//               src={data[0].img}
-//               alt={data[0].name}
-//             />
-//             <div className="px-6 py-4">
-//               <div className="font-bold text-xl mb-2">Course Description</div>
-//               <p className="text-gray-400 text-base">{data[0].detail}</p>
-//             </div>
-//           </div>
-//         </div>
-//         <div className="extra mt-8">
-//           <div className="p-4 w-full max-w-sm bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-//             <ul role="list" className="my-7 space-y-5">
-//               <li className="flex space-x-3">
-//                 <FaVideo />
-//                 <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-//                   Total Lecture : {data[0].video}
-//                 </span>
-//               </li>
-//               <li className="flex space-x-3">
-//                 <FaStopwatch />
-//                 <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-//                   Total Duration : {data[0].duration}
-//                 </span>
-//               </li>
-//               <li className="flex space-x-3">
-//                 <FaLanguage />
-//                 <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-//                   Language : English
-//                 </span>
-//               </li>
-
-//               <li className="flex space-x-3">
-//                 <FaQuestion />
-//                 <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-//                   Total Question : {data[0].question}
-//                 </span>
-//               </li>
-//               <li className="flex space-x-3">
-//                 <FaLevelDownAlt />
-//                 <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-//                   Level : {data[0].level}
-//                 </span>
-//               </li>
-
-//               <li className="flex space-x-3">
-//                 <FaCertificate />
-//                 <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-//                   Certificate : Yes
-//                 </span>
-//               </li>
-//             </ul>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default NewData;
 import React, { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import {
   FaBookOpen,
   FaClock,
-  FaAward,
   FaGlobe,
   FaQuestionCircle,
   FaChartBar,
@@ -121,99 +14,75 @@ import {
   FaVideo,
   FaCertificate,
   FaLanguage,
-  FaLevelDownAlt,
+  FaTools,
+  FaGraduationCap,
+  FaTag,
+  FaArrowLeft,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NewData = () => {
+  const course = useLoaderData();
   const [activeTab, setActiveTab] = useState("overview");
 
-  // Sample data - replace with useLoaderData() in your actual implementation
-  const data = [
-    {
-      id: 1,
-      name: "UI/UX Design Specialization",
-      img: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800",
-      detail:
-        "The UI/UX Design Specialization brings a design-centric approach to user interface and user experience design, and offers practical, skill-based instruction centered around a visual communications perspective, rather than one focused on marketing or programming alone. To become a UX Designer, you will need to learn and develop a number of technical skills crucial to the role, including user research and strategy (which involves data collection), wire framing and prototyping, user interface design, and responsive web design, among others.",
-      video: 20,
-      duration: "05 hr 10 min",
-      question: 80,
-      level: "Secondary",
-      rating: 4.8,
-      students: 12500,
-      author: "John Doe",
-      lastUpdated: "December 2024",
-    },
-  ];
-
-  const course = data[0];
-
-  const learningOutcomes = [
-    "Master the fundamentals of user interface design principles",
-    "Conduct comprehensive user research and usability testing",
-    "Create wireframes and interactive prototypes using industry tools",
-    "Design responsive interfaces for web and mobile platforms",
-    "Understand color theory, typography, and visual hierarchy",
-    "Build a professional portfolio showcasing your design projects",
-  ];
-
-  const courseContent = [
-    {
-      title: "Introduction to UI/UX Design",
-      lectures: 4,
-      duration: "45 min",
-    },
-    {
-      title: "User Research & Analysis",
-      lectures: 5,
-      duration: "1 hr 20 min",
-    },
-    {
-      title: "Wireframing & Prototyping",
-      lectures: 6,
-      duration: "1 hr 45 min",
-    },
-    {
-      title: "Visual Design Principles",
-      lectures: 5,
-      duration: "1 hr 30 min",
-    },
-  ];
+  if (!course) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-gray-800">Course not found</h2>
+          <Link
+            to="/courses"
+            className="text-blue-600 hover:underline mt-4 inline-block">
+            Back to Courses
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+      <div className="bg-gradient-to-br from-[#3E3E5E] via-[#0F0E17] to-indigo-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          {/* Back Button */}
+          <Link
+            to="/courses"
+            className="flex items-center justify-start gap-2 text-blue-100 hover:text-white mb-6 transition mt-10">
+            <FaArrowLeft />
+            <span>Back to Courses</span>
+          </Link>
+
           <div className="grid md:grid-cols-3 gap-8">
             <div className="md:col-span-2">
-              <div className="inline-block bg-blue-500 bg-opacity-50 px-3 py-1 rounded-full text-sm mb-4">
-                {course.level} Level
+              <div className="text-start w-fit ml-0 bg-blue-500 bg-opacity-50 px-3 py-1 rounded-full text-sm mb-4">
+                {course?.level} Level
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                {course.name}
+              <h1 className="text-start text-4xl md:text-5xl font-bold mb-4">
+                {course?.name}
               </h1>
-              <p className="text-lg text-blue-100 mb-6 leading-relaxed">
-                Transform your career with hands-on UI/UX design training. Learn
-                from industry experts and build real-world projects.
+              <p className="text-start text-lg text-blue-100 mb-6 leading-relaxed">
+                {course?.detail?.substring(0, 200)}...
               </p>
 
               <div className="flex flex-wrap items-center gap-6 mb-6">
                 <div className="flex items-center gap-2">
                   <FaStar className="text-yellow-400" />
-                  <span className="font-semibold">{course.rating}</span>
-                  <span className="text-blue-200">(2,450 reviews)</span>
+                  <span className="font-semibold">{course?.rating}</span>
+                  <span className="text-blue-200">
+                    ({course?.reviews_count?.toLocaleString()} reviews)
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <FaUsers />
-                  <span>{course.students.toLocaleString()} students</span>
+                  <span>{course?.students} students</span>
                 </div>
               </div>
 
               <div className="flex items-center gap-2 text-sm text-blue-200">
-                <span>Created by {course.author}</span>
+                <span>Created by {course?.author}</span>
                 <span>•</span>
-                <span>Last updated {course.lastUpdated}</span>
+                <span>Last updated {course?.last_updated}</span>
               </div>
             </div>
 
@@ -221,8 +90,8 @@ const NewData = () => {
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden md:mt-0 -mb-20 md:-mb-32">
               <div className="relative">
                 <img
-                  src={course.img}
-                  alt={course.name}
+                  src={course?.img}
+                  alt={course?.name}
                   className="w-full h-48 object-cover"
                 />
                 <button className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 hover:bg-opacity-40 transition group">
@@ -233,12 +102,35 @@ const NewData = () => {
               </div>
 
               <div className="p-6">
+                {/* Price Section */}
+                {course?.discount_price && (
+                  <div className="mb-6">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-3xl font-bold text-gray-900">
+                        ${course?.discount_price}
+                      </span>
+                      <span className="text-xl text-gray-400 line-through">
+                        ${course?.price}
+                      </span>
+                    </div>
+                    <div className="inline-flex items-center gap-1 bg-green-100 text-green-700 px-2 py-1 rounded text-sm font-semibold">
+                      <FaTag />
+                      {Math.round(
+                        ((course?.price - course?.discount_price) /
+                          course?.price) *
+                          100
+                      )}
+                      % OFF
+                    </div>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-start gap-3">
                     <FaVideo className="text-blue-600 mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-semibold text-gray-900">
-                        {course.video}
+                        {course?.video}
                       </div>
                       <div className="text-sm text-gray-500">Lectures</div>
                     </div>
@@ -247,7 +139,7 @@ const NewData = () => {
                     <FaClock className="text-blue-600 mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-semibold text-gray-900">
-                        {course.duration}
+                        {course?.duration}
                       </div>
                       <div className="text-sm text-gray-500">Duration</div>
                     </div>
@@ -256,7 +148,7 @@ const NewData = () => {
                     <FaQuestionCircle className="text-blue-600 mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-semibold text-gray-900">
-                        {course.question}
+                        {course?.question}
                       </div>
                       <div className="text-sm text-gray-500">Quizzes</div>
                     </div>
@@ -264,17 +156,19 @@ const NewData = () => {
                   <div className="flex items-start gap-3">
                     <FaCertificate className="text-blue-600 mt-1 flex-shrink-0" />
                     <div>
-                      <div className="font-semibold text-gray-900">Yes</div>
+                      <div className="font-semibold text-gray-900">
+                        {course?.certificate}
+                      </div>
                       <div className="text-sm text-gray-500">Certificate</div>
                     </div>
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3 rounded-lg transition shadow-lg hover:shadow-xl">
-                  Enroll Now
+                <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3 rounded-lg transition shadow-lg hover:shadow-xl mb-3">
+                  Enroll Now - ${course?.discount_price || course?.price}
                 </button>
 
-                <button className="w-full mt-3 border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-semibold py-3 rounded-lg transition flex items-center justify-center gap-2">
+                <button className="w-full border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-semibold py-3 rounded-lg transition flex items-center justify-center gap-2">
                   <FaDownload />
                   Download Syllabus
                 </button>
@@ -291,19 +185,21 @@ const NewData = () => {
           <div className="md:col-span-2">
             {/* Tabs */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 mb-8 overflow-hidden">
-              <div className="flex border-b border-gray-200">
-                {["overview", "curriculum", "outcomes"].map((tab) => (
-                  <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`flex-1 px-6 py-4 font-semibold transition ${
-                      activeTab === tab
-                        ? "text-blue-600 border-b-2 border-blue-600 bg-blue-50"
-                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                    }`}>
-                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                  </button>
-                ))}
+              <div className="flex border-b border-gray-200 overflow-x-auto">
+                {["overview", "curriculum", "outcomes", "prerequisites"].map(
+                  (tab) => (
+                    <button
+                      key={tab}
+                      onClick={() => setActiveTab(tab)}
+                      className={`flex-1 px-6 py-4 font-semibold transition whitespace-nowrap ${
+                        activeTab === tab
+                          ? "text-blue-600 border-b-2 border-blue-600 bg-blue-50"
+                          : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                      }`}>
+                      {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                    </button>
+                  )
+                )}
               </div>
 
               <div className="p-8">
@@ -313,27 +209,74 @@ const NewData = () => {
                       Course Description
                     </h2>
                     <p className="text-gray-600 leading-relaxed mb-6">
-                      {course.detail}
+                      {course?.detail}
                     </p>
 
-                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-100">
+                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-100 mb-6">
                       <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                         <FaGlobe className="text-blue-600" />
                         Course Information
                       </h3>
                       <div className="grid grid-cols-2 gap-4 text-sm">
-                        <div>
+                        <div className="text-start">
                           <span className="text-gray-500">Language:</span>
                           <span className="ml-2 font-medium text-gray-900">
-                            English
+                            {course?.language}
                           </span>
                         </div>
-                        <div>
+                        <div className="text-start">
                           <span className="text-gray-500">Skill Level:</span>
                           <span className="ml-2 font-medium text-gray-900">
-                            {course.level}
+                            {course?.level}
                           </span>
                         </div>
+                        <div className="text-start">
+                          <span className="text-gray-500">Category:</span>
+                          <span className="ml-2 font-medium text-gray-900">
+                            {course?.category_name}
+                          </span>
+                        </div>
+                        <div className="text-start">
+                          <span className="text-gray-500">Students:</span>
+                          <span className="ml-2 font-medium text-gray-900">
+                            {course?.students}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {course?.tools_covered &&
+                      course.tools_covered.length > 0 && (
+                        <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-6 border border-purple-100">
+                          <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                            <FaTools className="text-purple-600" />
+                            Tools & Software Covered
+                          </h3>
+                          <div className="flex flex-wrap gap-2">
+                            {course.tools_covered.map((tool, index) => (
+                              <span
+                                key={index}
+                                className="bg-white px-3 py-1 rounded-full text-sm font-medium text-gray-700 border border-purple-200">
+                                {tool}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                    <div className="mt-6 flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                      <img
+                        src={course?.author_img}
+                        alt={course?.author}
+                        className="w-16 h-16 rounded-full object-cover"
+                      />
+                      <div className="text-start">
+                        <h4 className="font-semibold text-gray-900">
+                          {course?.author}
+                        </h4>
+                        <p className="text-sm text-gray-600 w-[240px]">
+                          {course?.author_bio}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -344,32 +287,43 @@ const NewData = () => {
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">
                       Course Curriculum
                     </h2>
-                    <div className="space-y-4">
-                      {courseContent.map((section, index) => (
-                        <div
-                          key={index}
-                          className="border border-gray-200 rounded-lg p-5 hover:border-blue-300 hover:shadow-md transition">
-                          <div className="flex justify-between items-center">
-                            <div>
-                              <h3 className="font-semibold text-gray-900 mb-2">
-                                {section.title}
-                              </h3>
-                              <div className="flex items-center gap-4 text-sm text-gray-500">
-                                <span className="flex items-center gap-1">
-                                  <FaBookOpen />
-                                  {section.lectures} lectures
-                                </span>
-                                <span className="flex items-center gap-1">
-                                  <FaClock />
-                                  {section.duration}
-                                </span>
+                    {course?.curriculum && course.curriculum.length > 0 ? (
+                      <div className="space-y-4">
+                        {course.curriculum.map((section, index) => (
+                          <div
+                            key={index}
+                            className="border border-gray-200 rounded-lg p-5 hover:border-blue-300 hover:shadow-md transition">
+                            <div className="flex justify-between items-start">
+                              <div className="flex-1">
+                                <div className="flex items-center gap-2 mb-2">
+                                  <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-semibold">
+                                    Module {section.module}
+                                  </span>
+                                </div>
+                                <h3 className="text-start font-semibold text-gray-900 mb-2">
+                                  {section.title}
+                                </h3>
+                                <div className="flex items-center gap-4 text-sm text-gray-500">
+                                  <span className="flex items-center gap-1">
+                                    <FaBookOpen />
+                                    {section.lectures} lectures
+                                  </span>
+                                  <span className="flex items-center gap-1">
+                                    <FaClock />
+                                    {section.duration}
+                                  </span>
+                                </div>
                               </div>
+                              <FaChartBar className="text-gray-400 mt-2" />
                             </div>
-                            <FaChartBar className="text-gray-400" />
                           </div>
-                        </div>
-                      ))}
-                    </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-gray-500">
+                        No curriculum information available.
+                      </p>
+                    )}
                   </div>
                 )}
 
@@ -378,16 +332,50 @@ const NewData = () => {
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">
                       What You'll Learn
                     </h2>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      {learningOutcomes.map((outcome, index) => (
-                        <div
-                          key={index}
-                          className="flex items-start gap-3 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border border-green-100">
-                          <FaCheckCircle className="text-green-600 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700">{outcome}</span>
-                        </div>
-                      ))}
-                    </div>
+                    {course?.learning_outcomes &&
+                    course.learning_outcomes.length > 0 ? (
+                      <div className="grid md:grid-cols-2 gap-4">
+                        {course.learning_outcomes.map((outcome, index) => (
+                          <div
+                            key={index}
+                            className="flex items-start justify-start gap-3 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border border-green-100">
+                            <FaCheckCircle className="text-green-600 mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-700 text-start">
+                              {outcome}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-gray-500">
+                        No learning outcomes available.
+                      </p>
+                    )}
+                  </div>
+                )}
+
+                {activeTab === "prerequisites" && (
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                      Prerequisites
+                    </h2>
+                    {course?.prerequisites &&
+                    course.prerequisites.length > 0 ? (
+                      <div className="space-y-3">
+                        {course.prerequisites.map((prereq, index) => (
+                          <div
+                            key={index}
+                            className="flex items-start gap-3 p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg border border-amber-100">
+                            <FaGraduationCap className="text-amber-600 mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-700">{prereq}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-gray-500">
+                        No prerequisites required.
+                      </p>
+                    )}
                   </div>
                 )}
               </div>
@@ -403,11 +391,11 @@ const NewData = () => {
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-gray-600">
                   <FaVideo className="text-blue-600 flex-shrink-0" />
-                  <span>{course.video} video lectures</span>
+                  <span>{course?.video} video lectures</span>
                 </li>
                 <li className="flex items-center gap-3 text-gray-600">
                   <FaClock className="text-blue-600 flex-shrink-0" />
-                  <span>{course.duration} on-demand content</span>
+                  <span>{course?.duration} on-demand content</span>
                 </li>
                 <li className="flex items-center gap-3 text-gray-600">
                   <FaDownload className="text-blue-600 flex-shrink-0" />
@@ -419,21 +407,21 @@ const NewData = () => {
                 </li>
                 <li className="flex items-center gap-3 text-gray-600">
                   <FaQuestionCircle className="text-blue-600 flex-shrink-0" />
-                  <span>{course.question} practice quizzes</span>
+                  <span>{course?.question} practice quizzes</span>
                 </li>
                 <li className="flex items-center gap-3 text-gray-600">
                   <FaLanguage className="text-blue-600 flex-shrink-0" />
-                  <span>English language</span>
+                  <span>{course?.language} language</span>
                 </li>
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl shadow-lg p-6 text-white">
+            <div className="bg-gradient-to-br from-[#3E3E5E] via-[#0F0E17] to-indigo-800 rounded-xl shadow-lg p-6 text-white">
               <h3 className="font-bold text-xl mb-2">
                 Ready to Start Learning?
               </h3>
               <p className="text-blue-100 mb-4">
-                Join thousands of students transforming their careers
+                Join {course?.students} students transforming their careers
               </p>
               <button className="w-full bg-white text-blue-600 font-semibold py-3 rounded-lg hover:bg-blue-50 transition shadow-md">
                 Get Started Today
