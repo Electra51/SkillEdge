@@ -17,22 +17,14 @@ export const HowItWorks = () => {
         </div>
 
         <div className="relative">
-          <div
-            className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r 
-                        from-blue-500  via-orange-500 to-green-500 opacity-20 
-                        -translate-y-1/2 z-0"></div>
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500  via-orange-500 to-green-500 opacity-20 -translate-y-1/2 z-0"></div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {steps.map((step, index) => (
               <div key={index} className="group relative">
-                <div
-                  className="relative bg-white dark:bg-gray-800 rounded-2xl p-8 
-                              shadow-lg hover:shadow-2xl transition-all duration-300 
-                              hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div className="relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
                   <div
-                    className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-xl 
-                                flex items-center justify-center text-white mb-6 
-                                group-hover:scale-110 transition-transform duration-300`}>
+                    className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {step.icon}
                   </div>
 
@@ -48,7 +40,6 @@ export const HowItWorks = () => {
           </div>
         </div>
 
-        {/* CTA Button */}
         <div className="text-center mt-16">
           <Link
             to="/courses"

@@ -9,7 +9,7 @@ const PopularCourses = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5001/news")
+    fetch("https://learning-site-server-phi.vercel.app/news")
       .then((res) => res.json())
       .then((data) => {
         console.log("first", data);

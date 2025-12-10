@@ -27,23 +27,17 @@ export const FAQ = () => {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-900 rounded-xl shadow-md 
-                         hover:shadow-lg transition-all duration-300 overflow-hidden 
-                         border border-gray-200 dark:border-gray-700">
+                className="bg-white dark:bg-gray-900 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-5 flex items-center justify-between 
-                           text-left dark:hover:bg-gray-850 
-                           transition-colors duration-200">
+                  className="w-full px-6 py-5 flex items-center justify-between text-left dark:hover:bg-gray-850 transition-colors duration-200">
                   <span className="text-lg font-semibold text-gray-900 dark:text-white pr-8">
                     {faq.question}
                   </span>
                   <div
-                    className={`flex-shrink-0 w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/30 
-                                flex items-center justify-center text-blue-600 dark:text-blue-400 
-                                transition-transform duration-300 ${
-                                  openIndex === index ? "rotate-180" : ""
-                                }`}>
+                    className={`flex-shrink-0 w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 transition-transform duration-300 ${
+                      openIndex === index ? "rotate-180" : ""
+                    }`}>
                     {openIndex === index ? (
                       <FaChevronUp className="w-4 h-4" />
                     ) : (
@@ -53,12 +47,11 @@ export const FAQ = () => {
                 </button>
 
                 <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out
-                            ${
-                              openIndex === index
-                                ? "max-h-96 opacity-100"
-                                : "max-h-0 opacity-0"
-                            }`}>
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    openIndex === index
+                      ? "max-h-96 opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}>
                   <div className="px-6 pb-5 text-start text-gray-600 dark:text-gray-400 leading-relaxed">
                     {faq.answer}
                   </div>
@@ -69,9 +62,7 @@ export const FAQ = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <div
-            className="inline-block bg-white w-full dark:bg-gray-700 rounded-2xl p-8 shadow-lg 
-                        border border-gray-200 dark:border-gray-700">
+          <div className="inline-block bg-white w-full dark:bg-gray-700 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
               Still Have Questions?
             </h3>

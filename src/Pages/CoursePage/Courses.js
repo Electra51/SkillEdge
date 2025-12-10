@@ -7,7 +7,7 @@ const Courses = () => {
   const [description, setDescription] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5001/categories")
+    fetch("https://learning-site-server-phi.vercel.app/categories")
       .then((res) => res.json())
       .then((data) => setCourses(data));
   }, []);

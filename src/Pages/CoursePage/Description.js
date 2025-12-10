@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
 import {
@@ -22,7 +23,6 @@ const Description = ({ description }) => {
     language,
     question,
     certificate;
-  console.log("description", description);
 
   if (description.length > 0) {
     const course = description[0];
@@ -37,7 +37,6 @@ const Description = ({ description }) => {
     question = course.question;
     certificate = course.certificate;
   }
-  console.log("id", id);
 
   if (description.length === 0) {
     return (

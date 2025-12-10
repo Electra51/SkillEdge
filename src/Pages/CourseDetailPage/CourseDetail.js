@@ -25,7 +25,6 @@ const CourseDetail = () => {
   const course = useLoaderData();
   const [activeTab, setActiveTab] = useState("overview");
 
-  // Download Syllabus Function
   const handleDownloadSyllabus = () => {
     const syllabusContent = `
 COURSE SYLLABUS
@@ -108,10 +107,8 @@ For more information, visit our website.
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      {/* Hero Section */}
       <div className="bg-gradient-to-br from-[#3E3E5E] via-[#0F0E17] to-indigo-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Back Button */}
           <Link
             to="/courses"
             className="flex items-center justify-start gap-2 text-blue-100 hover:text-white mb-6 transition mt-10">
@@ -152,7 +149,6 @@ For more information, visit our website.
               </div>
             </div>
 
-            {/* Course Card */}
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden md:mt-0 -mb-20 md:-mb-32">
               <div className="relative">
                 <img
@@ -235,7 +231,6 @@ For more information, visit our website.
                   Download Syllabus
                 </button>
 
-                {/* NEW: Get Premium Access Button */}
                 <Link
                   to={`/category/${course?.category_id}/checkout`}
                   className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 rounded-lg transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
@@ -248,12 +243,9 @@ For more information, visit our website.
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:pt-40">
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Left Content */}
           <div className="md:col-span-2">
-            {/* Tabs */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 mb-8 overflow-hidden">
               <div className="flex border-b border-gray-200 overflow-x-auto">
                 {["overview", "curriculum", "outcomes", "prerequisites"].map(
@@ -452,7 +444,6 @@ For more information, visit our website.
             </div>
           </div>
 
-          {/* Right Sidebar - Features */}
           <div className="space-y-6">
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
               <h3 className="font-bold text-gray-900 mb-4">

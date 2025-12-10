@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaPlay, FaArrowRight } from "react-icons/fa";
+
 const Hero = () => {
   const [stats, setStats] = useState({
     students: 0,

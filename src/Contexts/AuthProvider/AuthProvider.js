@@ -46,26 +46,8 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  // useEffect(() => {
-  //     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-  //         console.log('inside auth state change', currentUser);
-
-  //         if(currentUser === null || currentUser.emailVerified){
-  //             setUser(currentUser);
-  //         }
-  //         setLoading(false);
-  //     });
-
-  //     return () => {
-  //         unsubscribe();
-  //     }
-
-  // }, [])
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log("inside auth state change", currentUser);
-
-      // সবসময় currentUser set করুন (null বা logged in যাই হোক)
       setUser(currentUser);
       setLoading(false);
     });

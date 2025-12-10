@@ -4,8 +4,6 @@ import Main from "../../layouts/Main";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Blogs from "../../Pages/BlogsPage/Blogs";
 import Courses from "../../Pages/CoursePage/Courses";
-
-import Category from "../../Pages/Category/Category";
 import CheckOut from "../../Pages/CheckOutPage/CheckOut";
 
 import Login from "../../Shared/Login/Login";
@@ -42,23 +40,19 @@ export const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: async ({ params }) => {
-          return fetch(`http://localhost:5001/category/${params.id}`);
+          return fetch(
+            `https://learning-site-server-phi.vercel.app/category/${params.id}`
+          );
         },
       },
 
       {
-        path: "/category/:id",
-        element: <Category />,
-        loader: async ({ params }) => {
-          return fetch(`http://localhost:5001/course/${params.id}`);
-        },
-      },
-
-      {
-        path: "/course/:id", // new route add korun
+        path: "/course/:id",
         element: <NewData />,
         loader: async ({ params }) => {
-          return fetch(`http://localhost:5001/course/${params.id}`);
+          return fetch(
+            `https://learning-site-server-phi.vercel.app/course/${params.id}`
+          );
         },
       },
 

@@ -82,7 +82,6 @@ const TermsAndConditions = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      {/* Header Section */}
       <div className="bg-gradient-to-br from-[#3E3E5E] via-[#0F0E17] to-indigo-800 text-white py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
@@ -114,9 +113,7 @@ const TermsAndConditions = () => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Important Notice */}
         <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-400 rounded-lg p-6 mb-8 shadow-sm">
           <div className="flex items-start gap-3">
             <FaExclamationTriangle className="text-yellow-600 text-xl mt-1 flex-shrink-0" />
@@ -131,7 +128,6 @@ const TermsAndConditions = () => {
           </div>
         </div>
 
-        {/* Terms Sections */}
         <div className="space-y-4">
           {sections.map((section) => (
             <div
@@ -175,7 +171,6 @@ const TermsAndConditions = () => {
           ))}
         </div>
 
-        {/* Contact Information */}
         <div className="mt-12 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl shadow-xl p-8 text-white">
           <div className="max-w-3xl">
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
@@ -202,7 +197,6 @@ const TermsAndConditions = () => {
           </div>
         </div>
 
-        {/* Footer Note */}
         <div className="mt-8 text-center">
           <p className="text-gray-500 text-sm">
             By clicking "Continue to Register" or creating an account, you
