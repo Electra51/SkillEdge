@@ -17,7 +17,7 @@
 ## Preview
 
 <div align="start">
-  <img src="src/assets/hero.png" alt="Home Page Preview" width="800"/>
+  <img src="src/Assets/hero.png" alt="Home Page Preview" width="800"/>
 </div>
 
 ---
