@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# SkillEdge Learning
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="start">
+  
+  ![Blendify Banner](https://img.shields.io/badge/SkillEdge%20Learning%20-6C63FF?style=for-the-badge)
+  [![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge&logo=github)](https://skill-edge-one.vercel.app/)
+  [![Lighthouse Score](https://img.shields.io/badge/Lighthouse-95%2B-success?style=for-the-badge&logo=lighthouse)](https://github.com/Electra51/SkillEdge)
+  
+  **SkillEdge is a modern, responsive learning platform designed to help users explore skills, enroll in courses, and track their learning progress.**
+  
+  [Live Demo](https://skill-edge-one.vercel.app/) · [Report Bug](https://github.com/Electra51/SkillEdge/issues) · [Request Feature](https://github.com/Electra51/SkillEdge/issues)
 
-## Available Scripts
+</div>
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Preview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<div align="start">
+  <img src="src/Assets/hero.png" alt="Home Page Preview" width="800"/>
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### User Features
+- User Registration & Login using firebase
+- Google Login using firebase
+- User profile
 
-### `npm run build`
+### Learning Features
+- Course list and course details page
+- Book appointment with verified dentists
+- Clicking course show course detail
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Technology Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![React](https://img.shields.io/badge/React-React.js-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![React Router](https://img.shields.io/badge/React%20Router-Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Google Lighthouse Score
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+Performance:     86/100
+Accessibility:   92/100
+Best Practices:  96/100
+SEO:             100/100
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Clone the repository**
 
-## Learn More
+   ```bash
+   git clone https://github.com/electra51/SkillEdge.git
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Navigate to the project directory**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   cd SkillEdge
+   ```
+3. **Run project**
+ 
+   ```bash
+   npm install
+   ```
+    ```bash
+   npm start
+   ```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributing
 
-### Analyzing the Bundle Size
+Contributions are always welcome! Here's how you can help:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Electra51**
 
-### Deployment
+- Portfolio: https://nextjs-my-portfolio-electra51.vercel.app/
+- GitHub: [@electra51](https://github.com/electra51)
+- LinkedIn: https://www.linkedin.com/in/safayet-nur/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+<div align="start">
+
+### Star this repository if you found it helpful!
+
+Made with ❤️ by Electra51
+
+**Happy Coding!** 🚀
+
+</div>
